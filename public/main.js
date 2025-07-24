@@ -111,8 +111,18 @@ signupForm.addEventListener("submit", async (e) => {
     setTimeout(() => {
       closePopup();
     }, 3000);
+
+    setTimeout(() => {
+    signupBtn.innerHTML = "Register";
+    signupBtn.style.backgroundColor = "";
+    email.value = "";
+    password.value = "";
+    conPassword.value = "";
+  }, 3000);
+
   } else {
-    alert("Signup failed");
+    signupBtn.innerHTML= "User already exists";
+    signupBtn.style.backgroundColor = "red";
   }
 });
 

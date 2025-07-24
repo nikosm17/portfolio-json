@@ -8,20 +8,5 @@
     "id": "100002",
     "email": "john@doe@gmail.com",
     "password": "pass"
-  },
-  {
-    "id": "3",
-    "email": "nikos123@gmail.com",
-    "password": "123"
-  },
-  {
-    "id": "4",
-    "email": "nikos1234@gmail.com",
-    "password": "1234"
-  },
-  {
-    "id": "5",
-    "email": "nikos123456@gmail.com",
-    "password": "pas"
   }
 ]
