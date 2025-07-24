@@ -178,7 +178,7 @@ button.loading .btn-text {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 29%;
-  height: 30vh;  
+  height: 40vh;  
   background-color: #00000025;
   border-radius: 50px;  
   padding-left: 150px;
@@ -190,7 +190,7 @@ button.loading .btn-text {
 }
 #signup-btn{
   position: absolute;
-  top: 23vh;
+  top: 29vh;
   left: 50%;
   transform: translate(-50%, 0);
   padding: 12px 24px;
@@ -233,7 +233,7 @@ button.loading .btn-text {
   outline: invert;
   padding: 10px 10px;
 }
-#signupName, #signupPassword {
+#signupName, #signupPassword, #confirmPassword {
   background-color: #e0f7fa;      
   color: black;                 
   border: 2px solid #51329b96;       

@@ -3,6 +3,13 @@ const logForm = document.getElementById("login-form");
 const pass = document.getElementById("password");
 const button = document.getElementById("btn");
 const popup = document.getElementById("popup");
+const signupForm = document.getElementById("signup-form");
+const email = document.getElementById('signupName')
+const password = document.getElementById("signupPassword");
+const conPassword = document.getElementById("confirmPassword");
+const pass1 = document.getElementById("pass1");
+const pass2 = document.getElementById("pass2");
+const signupBtn = document.getElementById("signup-btn");
 
 let failedTries = 0;
 
@@ -74,6 +81,41 @@ function timer(url) {
     }
   }, 1000);
 };
+
+signupForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  if (password.value !== conPassword.value) {
+    pass2.innerHTML = "Passwords should match!";
+    pass1.style.color = "red"; 
+    pass2.style.color = "red";
+    return;
+  } else{
+    pass1.innerHTML = "Password";
+    pass2.innerHTML = "Confirm Password";
+    pass1.style.color = "black";
+    pass2.style.color = "black";
+  }
+
+  const response = await fetch("/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: email.value, password: password.value }),
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    signupBtn.innerHTML = "Successful Registration";
+    signupBtn.style.backgroundColor = "green";
+    setTimeout(() => {
+      closePopup();
+    }, 3000);
+  } else {
+    alert("Signup failed");
+  }
+});
+
 
 function openPopup(){
   popup.classList.add("open-popup");

@@ -23,6 +23,26 @@ app.post('/login', (req, res) => {
   }
 });
 
+app.post('/register', (req, res) => {
+  const { email, password } = req.body;
+
+  const existingUser = accounts.find(acc => acc.email === email);
+  if (existingUser) {
+    return res.json({ success: false, message: "User already exists!" });
+  }
+
+  const newUser = {
+    id: (accounts.length + 1).toString(),
+    email,
+    password
+  };
+  accounts.push(newUser);
+
+  fs.writeFileSync('./accounts.json', JSON.stringify(accounts, null, 2));
+
+  res.json({ success: true });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });

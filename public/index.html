@@ -52,14 +52,14 @@
       <button type="button" class="sign-in-btn" id="sign-in-btn" onclick="openPopup()">--Sign up--</button>
     </form>
 <div class="popup" id="popup">
-    <form id="signup-form">
+    <form method="POST" action="/register" id="signup-form">
       <legend>Name</legend>
       <input type="text" name="email" id="signupName" required />
-      <legend>Password</legend>
+      <legend id="pass1">Password</legend>
       <input type="password" name="password" id="signupPassword" required />
-      <legend>Confirm Password</legend>
-      <input type="password" name="password" id="signupPassword" required />
-      <button type="submit" id="signup-btn" onclick="closePopup()">Register</button>
+      <legend id="pass2">Confirm Password</legend>
+      <input type="password" name="confirmPassword" id="confirmPassword" required />
+      <button type="submit" id="signup-btn">Register</button>
     </form>
 </div>
   </div>
